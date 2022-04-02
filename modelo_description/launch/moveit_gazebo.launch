@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+  
+  <arg name="model" default="$(find modelo_description)/urdf/modelo_gazebo.xacro"/>
+  <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+ 
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="true"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!--Launch Gazebo Simulator-->
+  <node args="-param robot_description -urdf -model modelo"
+   name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+
+</launch>
