@@ -1,4 +1,4 @@
-# IEEE-RASArm
+# IEEE-RASArm (UFABC)
 (**Projeto em andamento**) <br>
 * O projeto consiste em utilizar o framework ROS (Robot Operating Systems) para simular e validar um braço robótico 5-DOF, controlado através de um teclado ou por um joystick. <br>
 * O modelo escolhido foi o BCN3D-MOVEO, braço robótico open source de cinco graus de liberdade que possui compatibilidade com o Arduino para controle da parte eletrônica do modelo. <br>
