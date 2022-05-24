@@ -36,6 +36,6 @@ Em relação à etapa de modelagem do braço robótico, optou-se pela utilizaç�
 
 ## ✅ Autores
 
-## Licença
+## 📑 Licença
 
 
