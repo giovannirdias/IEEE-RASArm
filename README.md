@@ -27,6 +27,11 @@ Outro ponto do projeto é estabelecer um vínculo entre o modelo virtual e o rea
 ## 🦾 Modelo do braço robótico
 
 Em relação à etapa de modelagem do braço robótico, optou-se pela utilização da versão *open source* BCN3D-MOVEO, que possui cinco graus de liberdade e portabilidade com o microcontrolador Arduino.<br>
+A escolha desse modelo deve-se pela sua disponibilidade de informações referente a impressão 3D do braço robótico, com o compartilhamento de arquivos BOM (*bill of materials*), STL *files* para impressão da estrutura e as CAD *designs files* no github da [BCN3D Moveo](https://github.com/BCN3D/BCN3D-Moveo).
+
+<p align="center">
+    <img width="500" src="https://www.bcn3d.com/wp-content/uploads/2016/07/IMG_7106_web-1.jpg"/>
+</p>
 
 ## 💻 Como utilizar
 
