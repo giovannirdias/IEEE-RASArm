@@ -8,13 +8,13 @@
 
 <p align="center">
     <a href="#-descrição-do-projeto">Descrição</a> |    
-    <a href="#-requisitos">Requisitos</a> |
+    <a href="#-Requisitos">Requisitos</a> |
     <a href="#-modelo-do-braço-robótico">Modelagem</a> |
     <a href="#-como-utilizar">Como utilizar</a> |
+    <a href="#-descrição-dos-repositorios">Repositórios</a> |
     <a href="#-resultados">Resultados</a> |
-    <a href="#-descrição-dos-repositorios">Repositório</a> |
-    <a href="#-autores">Autores</a> |
-    <a href="#-licença">Licença</a>
+    <a href="#-licença">Licença</a> |
+    <a href="#-autores">Autores</a> 
 </p>
     
 ## 🤖 **Descrição do projeto**
