@@ -99,7 +99,8 @@ Contém as configuração do ambiente RVIZ, como o plugin Moveit e especificaç�
 <table>
     <tr>
         <td align="center"><a href="https://github.com/giovannirdias"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/99917909?v=4" width="100px;" alt=""/><br /><sub><b> Giovanni</b><br /><a> 🤖 💻 </a></td>
-        <td align="center"><a href="https://github.com/marcos3939"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/89995021?v=4" width="100px;" alt=""/><br /><sub><b> Marcos Pacheco</b><br /><a> 🤖 💻 </a></td>   
+        <td align="center"><a href="https://github.com/marcos3939"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/89995021?v=4" width="100px;" alt=""/><br /><sub><b> Marcos Pacheco</b><br /><a> 🤖 💻 </a></td>
+        <td align="center"><a href="https://github.com/vitor-chagas"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/98292972?v=4" width="100px;" alt=""/><br /><sub><b> Vitor Chagas</b><br /><a> 🤖 💻 </a></td>
     </tr>            
 </table>
             
