@@ -8,10 +8,10 @@
 
 <p align="center">
     <a href="#-descrição-do-projeto">Descrição</a> |    
-    <a href="#-Requisitos">Requisitos</a> |
+    <a href="#-requisitos">Requisitos</a> |
     <a href="#-modelo-do-braço-robótico">Modelagem</a> |
     <a href="#-como-utilizar">Como utilizar</a> |
-    <a href="#-descrição-dos-repositorios">Repositórios</a> |
+    <a href="#-repositórios">Repositórios</a> |
     <a href="#-resultados">Resultados</a> |
     <a href="#-licença">Licença</a> |
     <a href="#-autores">Autores</a> 
@@ -76,7 +76,8 @@ Os comandos de instrução para execução do projeto são apresentados logo aba
       workspace_name/$ roslaunch name_robot_description gazebo.launch 
       ```
 
-## 📁 **Descrição dos repositórios**
+## 📁 **Repositórios**
+Abaixo, apresenta-se uma descrição dos repositórios desse projeto.
 
 ### **I. model_description**
 Contém diretórios para construção dos elementos do braço robótico e também para a execução das simulações.
