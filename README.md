@@ -42,7 +42,40 @@ A escolha desse modelo deve-se pela sua disponibilidade de informações referen
 
 ## 💻 **Como utilizar**
 
+Os comandos de instrução para execução do projeto são apresentados logo abaixo, em considerando a utilização do sistema operacional Ubuntu.
+
+1. **Criar um workspace:** criar uma pasta principal através do terminal com o nome desejado, inserindo nela um subpasta nomeado como src.
+   ```
+   $ mkdir workspace_name/src
+   ```
+2. Criar o espaço de trabalho catkin, para criação dos diretórios source(src), build e devel e executar o comando CMake.
+   ```
+   $ cd ~/worspace_name
+   $ catkin_make
+   ```
+3. Sempre que deseja-se executar o workspace ou após a compilação inicial deve-se executar o seguinte comando para soprepor o espaço de trabalho sob o ambiente.
+   ```
+   $ source devel/setup.bash
+   ```
+4. Crie um diretório para descrição do modelo dentro da pasta src, onde nomeação da pasta é de sua escolha.
+   ```
+   $ cd ~/src
+   workspace_name/src$ mkdir name_robot_description
+   ```
+5. Em seguida, baixe os repositórios do projeto apresentados no github, colocando-os na pasta criada na etapa 4.
+6. Para a etapa de execução das simulações, existe comandos específicos para cada tipo de plataforma associada ao ROS:
+   a. Para a avaliação da tarefa de planejamento e manipulação de objetos com braço robótico simulado, utiliza-se a plataforma RVIZ com o *plugin* Movelt pelo seguinte comando:
+      ```
+      workspace_name/$ roslaunch name_robot_description rviz.launch 
+      ```
+   b. Para simulação 3D de cenários com obstáculos e outros objetos, incluíndo a utilização de componentes físicos como iluminação, gravidade e inércia, deve-se utilizar a plataforma Gazebo pelo seguinte comando:
+      ```
+      workspace_name/$ roslaunch name_robot_description gazebo.launch 
+      ```
+
 ## 📁 **Descrição dos repositórios**
+
+### 
 
 ## 🏁 **Resultados**
 
@@ -55,3 +88,5 @@ A escolha desse modelo deve-se pela sua disponibilidade de informações referen
         <td align="center"><a href="https://github.com/giovannirdias"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/99917909?v=4" width="100px;" alt=""/><br /><sub><b> Giovanni</b><br /><a> 🤖 💻 </a></td>
         <td align="center"><a href="https://github.com/marcos3939"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/89995021?v=4" width="100px;" alt=""/><br /><sub><b> Marcos Pacheco</b><br /><a> 🤖 💻 </a></td>   
     </tr>            
+</table>
+            
