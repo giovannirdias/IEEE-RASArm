@@ -66,6 +66,9 @@ Os comandos de instrução para execução do projeto são apresentados logo aba
    workspace_name/src$ mkdir name_robot_description
    ```
 5. Em seguida, baixe os repositórios do projeto apresentados no github, colocando-os na pasta criada na etapa 4.
+   ```
+   $ git clone https://github.com/giovannirdias/IEEE-RASArm.git
+   ```
 6. Para a etapa de execução das simulações, existe comandos específicos para cada tipo de plataforma associada ao ROS:
    a. Para a avaliação da tarefa de planejamento e manipulação de objetos com braço robótico simulado, utiliza-se a plataforma RVIZ com o *plugin* Movelt pelo seguinte comando:
       ```
