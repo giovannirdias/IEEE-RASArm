@@ -1,0 +1,13 @@
+<library path="lib/libcomputed_torque_controller">
+    <class name="effort_controllers/ComputedTorqueController"
+        type="effort_controllers::ComputedTorqueController"
+        base_class_type="controller_interface::ControllerBase">
+        <description>
+            The ComputedTorqueController implements a computed torque controller
+            in joint space for a robot with open chain dynamic model.  The
+            reference inputs (command in the ROS nomenclature) are joint
+            positions, velocities and accelerations.  This type of controller
+            expects an EffortJointInterface type of hardware interface.
+        </description>
+    </class>
+</library>

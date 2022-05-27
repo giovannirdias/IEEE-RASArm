@@ -1,0 +1,10 @@
+hand_controller:
+    type: position_controllers/JointGroupPositionController
+    joints:
+        - idol_gear_joint
+        - idol_grip_joint
+        - servo_gear_joint
+        - servo_grip_joint
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 1000

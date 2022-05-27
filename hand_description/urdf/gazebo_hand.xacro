@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<robot name="moveo" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  	<gazebo>
+		<plugin name="idol_grip_joint_mimic_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+			<joint>idol_grip_joint</joint>
+			<mimicJoint>idol_gear_joint</mimicJoint>
+			<multiplier>-1</multiplier>
+			<offset>0.0</offset>
+			<maxEffort>30.0</maxEffort>
+			<sensitiveness>0.0</sensitiveness>
+		</plugin>
+	</gazebo>
+
+  	<gazebo>
+		<plugin name="servo_gear_joint_mimic_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+			<joint>servo_gear_joint</joint>
+			<mimicJoint>idol_gear_joint</mimicJoint>
+			<multiplier>-1</multiplier>
+			<offset>0.0</offset>
+			<maxEffort>30.0</maxEffort>
+			<sensitiveness>0.0</sensitiveness>
+		</plugin>
+	</gazebo>
+
+  	<gazebo>
+		<plugin name="servo_grip_joint_mimic_plugin" filename="libroboticsgroup_gazebo_mimic_joint_plugin.so">
+			<joint>servo_grip_joint</joint>
+			<mimicJoint>servo_gear_joint</mimicJoint>
+			<multiplier>-1</multiplier>
+			<offset>0.0</offset>
+			<maxEffort>30.0</maxEffort>
+			<sensitiveness>0.0</sensitiveness>
+		</plugin>
+	</gazebo>
+
+    <gazebo reference="base_hand">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+        <gravity>true</gravity>
+    </gazebo>
+
+    <gazebo reference="idol_gear">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="idol_grip">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="servo_gear">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+    <gazebo reference="servo_grip">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>true</selfCollide>
+    </gazebo>
+
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" >
+		<controlPeriod>0.001</controlPeriod>
+		</plugin>
+	</gazebo>
+
+</robot>

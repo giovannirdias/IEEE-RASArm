@@ -1,0 +1,36 @@
+<launch>
+	<arg name="paused" default="true"/>
+	<arg name="headless" default="false"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="hand" default="false"/>
+
+	<!-- This is the default Barrett WAM Controller, used by libbarrett -->
+	<arg name="controller" default="computed_torque_controller"/>
+	<arg name="config" default="$(find moveo_control)/config/$(arg controller).yaml"/>
+	
+	<remap from="$(arg controller)/command" to="controller/command" />
+
+	<include file="$(find moveo_description)/launch/gazebo.launch" >
+		<arg name="paused" value="$(arg paused)"/>
+		<arg name="headless" value="$(arg headless)"/>
+		<arg name="use_sim_time" value="$(arg use_sim_time)"/>
+		<arg name="hand" value="$(arg hand)"/>
+	</include>
+
+	<rosparam file="$(arg config)" command="load"/>
+
+	<node name="controller_spawner" pkg="controller_manager" type="spawner"
+		respawn="false" output="screen"
+		args="$(arg controller)" />
+
+	<node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner"
+		respawn="false" output="screen"
+		args="joint_state_controller" />
+
+	<rosparam if="$(arg hand)" file="$(find moveo_control)/config/hand_controller.yaml" command="load"/>
+
+	<node if="$(arg hand)" name="hand_controller_spawner" pkg="controller_manager" type="spawner"
+		respawn="false" output="screen"
+		args="hand_controller" />
+
+</launch>

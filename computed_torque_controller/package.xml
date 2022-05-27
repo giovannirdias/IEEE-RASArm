@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>computed_torque_controller</name>
+    <version>3.1.0</version>
+    <description>The computed_torque_controller package</description>
+    <maintainer email="fetter@ece.ufrgs.br">Walter Fetter Lages</maintainer>
+    <license>GPLv3</license>
+    <author email="fetter@ece.ufrgs.br">Walter Fetter Lages</author>
+
+    <!-- The *depend tags are used to specify dependencies -->
+    <!-- Dependencies can be catkin packages or system dependencies -->
+    <!-- Examples: -->
+    <!-- Use depend as a shortcut for packages that are both build and exec dependencies -->
+    <!--   <depend>roscpp</depend> -->
+    <!--   Note that this is equivalent to the following: -->
+    <!--   <build_depend>roscpp</build_depend> -->
+    <!--   <exec_depend>roscpp</exec_depend> -->
+    <!-- Use build_depend for packages you need at compile time: -->
+    <!--   <build_depend>message_generation</build_depend> -->
+    <!-- Use build_export_depend for packages you need in order to build against this package: -->
+    <!--   <build_export_depend>message_generation</build_export_depend> -->
+    <!-- Use buildtool_depend for build tool packages: -->
+    <!--   <buildtool_depend>catkin</buildtool_depend> -->
+    <!-- Use exec_depend for packages you need at runtime: -->
+    <!--   <exec_depend>message_runtime</exec_depend> -->
+    <!-- Use test_depend for packages you need only for testing: -->
+    <!--   <test_depend>gtest</test_depend> -->
+    <!-- Use doc_depend for packages you need only for building documentation: -->
+    <!--   <doc_depend>doxygen</doc_depend> -->
+    <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>Eigen3</build_depend>
+    <build_depend>cmake_modules</build_depend>
+    <build_depend>controller_interface</build_depend>
+    <build_depend>controller_manager</build_depend>
+    <build_depend>kdl_parser</build_depend>
+    <build_depend>orocos_kdl</build_depend>
+    <build_depend>roscpp</build_depend>
+    <build_depend>trajectory_msgs</build_depend>
+    <build_depend>urdf</build_depend>
+    <build_export_depend>Eigen3</build_export_depend>
+    <build_export_depend>cmake_modules</build_export_depend>
+    <build_export_depend>controller_interface</build_export_depend>
+    <build_export_depend>controller_manager</build_export_depend>
+    <build_export_depend>kdl_parser</build_export_depend>
+    <build_export_depend>orocos_kdl</build_export_depend>
+    <build_export_depend>roscpp</build_export_depend>
+    <build_export_depend>trajectory_msgs</build_export_depend>
+    <build_export_depend>urdf</build_export_depend>
+    <exec_depend>Eigen3</exec_depend>
+    <exec_depend>cmake_modules</exec_depend>
+    <exec_depend>controller_interface</exec_depend>
+    <exec_depend>controller_manager</exec_depend>
+    <exec_depend>kdl_parser</exec_depend>
+    <exec_depend>orocos_kdl</exec_depend>
+    <exec_depend>roscpp</exec_depend>
+    <exec_depend>trajectory_msgs</exec_depend>
+    <exec_depend>urdf</exec_depend>
+
+    <!-- The export tag contains other, unspecified, tags -->
+    <export>
+        <controller_interface plugin="${prefix}/computed_torque_controller_plugins.xml"/>
+    </export>
+</package>

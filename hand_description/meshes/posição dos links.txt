@@ -1,0 +1,14 @@
+Posição do links ( x , y , z ) #Em relação à origem do mundo
+
+Base_Tool: ( 0.0035 , 0 , 0.79719 )
+
+Partes com a base_tool como referência
+
+Idol_Gear: ( -0.014 , 0 , 0.024 )
+Idol_Grip: ( -0.054 , 0 , 0 )
+Idol_pistol_grip: ( 0 , 0 , 0 )
+
+
+
+Sobre os joints:
+A origem xyz do joint tem como ponto zero a posição do parent link associado além de servir como ponto zero para o child link associado.

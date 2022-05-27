@@ -1,0 +1,13 @@
+<launch>
+	<!-- -->
+    <arg name="controller" default="computed_torque_controller"/>
+	<rosparam file="$(find moveo_control)/config/computed_torque_controller.yaml" command="load"/>
+	<!-- -->
+	<node name="controller_spawner" pkg="controller_manager" type="spawner"
+		respawn="false" output="screen"
+		args="$(arg controller)" />
+	<node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner"
+		respawn="false" output="screen"
+		args="joint_state_controller" />
+
+</launch>

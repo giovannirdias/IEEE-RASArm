@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<robot name="hand" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- -->
+    <xacro:include filename="$(find hand_description)/urdf/transmission_hand.xacro" />
+    <xacro:include filename="$(find hand_description)/urdf/gazebo_hand.xacro" />
+
+    <!-- -->
+    <link name="hand_base_link">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.000294 0.003541 0.01953"/>
+            <mass value="0.059408"/>
+            <inertia ixx="0.000022600995" ixy="-0.000000714707" ixz="-0.000000079184" iyy="0.000027853137" iyz="-0.000000991807" izz="0.000024241546"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/base_tool.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/base_tool.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="idol_gear">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.006451 -0.0000000003438 0.000406"/>
+            <mass value="0.0052"/>
+            <inertia ixx="0.000000238486" ixy="0" ixz="-0.000000020286" iyy="0.000001203258" iyz="0" izz="0.000000995189"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/idol_gear.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/idol_gear.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="idol_gear">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.006451 -0.0000000003438 0.000406"/>
+            <mass value="0.0052"/>
+            <inertia ixx="0.000000238486" ixy="0" ixz="-0.000000020286" iyy="0.000001203258" iyz="0" izz="0.000000995189"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/idol_gear.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/idol_gear.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="idol_grip">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.010281 -0.000203 0.022875"/>
+            <mass value="0.013967"/>
+            <inertia ixx="0.000004512579" ixy="-0.000000019248" ixz="-0.000002088635" iyy="0.00000534571" iyz="-0.000000036574" izz="0.000001719667"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/idol_grip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/idol_grip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="servo_gear">
+        <inertial>
+            <origin rpy="0 0 0" xyz="0.006594 0.000000006165 -0.000396"/>
+            <mass value="0.005069"/>
+            <inertia ixx="0.000000237003" ixy="0" ixz="-0.000000017477" iyy="0.000001195729" iyz="0" izz="0.000000988379"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/servo_gear.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/servo_gear.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="servo_grip">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.010281 -0.000204 0.022875"/>
+            <mass value="0.013967"/>
+            <inertia ixx="0.000004512582" ixy="0.000000019261" ixz="0.000002088639" iyy="0.000005345719" iyz="-0.000000036599" izz="0.000001719672"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/servo_grip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://hand_description/meshes/servo_grip.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- -->
+    <joint name="idol_gear_joint" type="revolute">
+        <origin xyz="-0.014 0 0.024" rpy="0 0 0"/>
+        <parent link="hand_base_link"/>
+        <child link="idol_gear"/>
+        <axis xyz="0 1 0"/>
+        <limit upper="1.15" lower="-0.5" effort="100" velocity="2"/>
+    </joint>
+
+	<joint name="idol_grip_joint" type="revolute">
+        <origin xyz="-0.04 0 0" rpy="0 0 0"/>
+        <parent link="idol_gear"/>
+        <child link="idol_grip"/>
+        <axis xyz="0 1 0"/>
+		<limit effort="30" velocity="1.5" upper="1.15" lower="-0.5" />
+		<dynamics damping="10" friction="1"/>
+		<mimic joint="idol_gear_joint" multiplier="-1" offset="0"/>
+	</joint >
+
+    <joint name="servo_gear_joint" type="revolute">
+        <origin xyz="0.014 0 0.024" rpy="0 0 0"/>
+        <parent link="hand_base_link"/>
+        <child link="servo_gear"/>
+        <axis xyz="0 1 0"/>
+        <limit upper="1.15" lower="-0.5" effort="100" velocity="2"/>
+		    <dynamics damping="10" friction="1"/>
+		    <mimic joint="idol_gear_joint" multiplier="-1" offset="0"/>
+	</joint >
+
+    <joint name="servo_grip_joint" type="continuous">
+        <origin xyz="0.04 0 0" rpy="0 0 0"/>
+        <parent link="servo_gear"/>
+        <child link="servo_grip"/>
+        <axis xyz="0 1 0"/>
+        <limit upper="1.15" lower="-0.5" effort="100" velocity="2"/>
+		<dynamics damping="10" friction="1"/>
+        <mimic joint="servo_gear_joint" multiplier="-1" offset="0"/>
+	</joint >
+
+</robot>

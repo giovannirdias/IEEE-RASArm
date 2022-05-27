@@ -1,0 +1,23 @@
+<launch>
+	<arg name="paused" default="true"/>
+	<arg name="headless" default="false"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="world" default="true"/>
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="paused" value="$(arg paused)"/>
+		<arg name="headless" value="$(arg headless)"/>
+		<arg name="use_sim_time" value="$(arg use_sim_time)"/>
+		<arg name="world_name" value="worlds/empty_sky.world" />
+	</include>
+
+	<param name="robot_description" command="$(find xacro)/xacro '$(find hand_description)/xacro/hand.urdf'" />
+
+	<node name="hand_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model hand" respawn="false" output="screen" />
+
+	<rosparam file="$(find moveo_control)/config/hand_controller.yaml" command="load"/>
+
+	<node name="hand_controller_spawner" pkg="controller_manager" type="spawner"
+		respawn="false" output="screen"
+		args="hand_controller joint_state_controller" />
+</launch>

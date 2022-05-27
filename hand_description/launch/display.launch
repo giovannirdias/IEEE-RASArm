@@ -1,0 +1,13 @@
+<launch>
+    <!-- -->
+    <arg name="hand" default="$(find hand_description)/urdf/hand.urdf"/>
+    <arg name="gui" default="true" />
+    <arg name="rvizconfig" default="$(find hand_description)/rviz/urdf.rviz" />
+
+    <param name="robot_description" command="$(find xacro)/xacro $(arg hand)" />
+
+    <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
+    <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>

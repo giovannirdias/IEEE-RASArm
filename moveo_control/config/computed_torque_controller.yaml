@@ -1,0 +1,25 @@
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+
+computed_torque_controller:
+    type: effort_controllers/ComputedTorqueController
+    joints:
+        - joint_1
+        - joint_2
+        - joint_3
+        - joint_4
+        - joint_5
+    Kp: [25.0, 0.0, 0.0, 0.0, 0.0, 
+        0.0, 25.0, 0.0, 0.0, 0.0, 
+        0.0, 0.0, 25.0, 0.0, 0.0, 
+        0.0, 0.0, 0.0, 25.0, 0.0, 
+        0.0, 0.0, 0.0, 0.0, 25.0]
+    Kd: [10.0, 0.0, 0.0, 0.0, 0.0, 
+        0.0, 10.0, 0.0, 0.0, 0.0, 
+        0.0, 0.0, 10.0, 0.0, 0.0, 
+        0.0, 0.0, 0.0, 10.0, 0.0, 
+        0.0, 0.0, 0.0, 0.0, 10.0]
+    gravity: {x: 0.0, y: 0.0, z: -9.8}
+    chain: {root: "base_link", tip: "link_5"}
+    priority: 99
