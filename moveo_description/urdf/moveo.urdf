@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+
+<robot name="moveo" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- -->
+    <xacro:arg name="hand" default="true" />
+    <xacro:include filename="$(find moveo_description)/urdf/transmission.xacro" />
+    <xacro:include filename="$(find moveo_description)/urdf/gazebo.xacro" />
+    <xacro:if value="$(arg hand)">
+        <xacro:include filename="$(find hand_description)/urdf/hand.urdf" />
+    </xacro:if>
+
+    <!-- -->
+    <link name="world"/>
+
+    <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
+    <!-- -->
+    <link name="base_link">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.032098 -0.026397 0.08514"/>
+            <mass value="10.169154"/>
+            <inertia ixx="0.2846" ixy="0.024" ixz="0.0101" iyy="0.2545" iyz="-0.01796" izz="0.5176"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="link_1">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.000023 0.000882 0.072445"/>
+            <mass value="4.666876"/>
+            <inertia ixx="0.0125" ixy="-0.000000338323" ixz="-0.000007914041" iyy="0.0322" iyz="-0.000044692968" izz="0.02645"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="link_2">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.001725 0.00015 0.079972"/>
+            <mass value="2.048356"/>
+            <inertia ixx="0.01728" ixy="-0.000005917226" ixz="0.0001296" iyy="0.01816" iyz="-0.000006099421" izz="0.003837"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="link_3">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.00032 -0.000078 0.041286"/>
+            <mass value="0.769619"/>
+            <inertia ixx="0.002195" ixy="0.000000017548" ixz="0.000008441442" iyy="0.002151" iyz="-0.000000825723" izz="0.0007182"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="link_4">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.009746 -0.000166 0.045739"/>
+            <mass value="0.727387"/>
+            <inertia ixx="0.000797" ixy="0.000004026981" ixz="-0.000057970667" iyy="0.001046" iyz="0.000001864197" izz="0.0005581"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="link_5">
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.000454 2.592E-13 0.004243"/>
+            <mass value="0.185961"/>
+            <inertia ixx="0.0001214" ixy="0" ixz="0.000000613801" iyy="0.0001034" iyz="-0.000000003862" izz="0.000087401675"/>
+        </inertial>
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_5.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="package://moveo_description/meshes/link_5.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- -->
+    <joint name="joint_1" type="revolute">
+        <origin xyz="0 0 0.14695" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="link_1"/>
+        <axis xyz="0 0 1"/>
+        <limit upper="1.570796" lower="-1.570796" effort="100" velocity="2"/>
+    </joint>
+
+    <joint name="joint_2" type="revolute">
+        <origin xyz="0.0015 0 0.1655" rpy="0 0 0"/>
+        <parent link="link_1"/>
+        <child link="link_2"/>
+        <axis xyz="1 0 0"/>
+        <limit upper="1.570796" lower="-1.570796" effort="100" velocity="2"/>
+    </joint>
+
+    <joint name="joint_3" type="revolute">
+        <origin xyz="0.002 0 0.22112" rpy="0 0 0"/>
+        <parent link="link_2"/>
+        <child link="link_3"/>
+        <axis xyz="1 0 0"/>
+        <limit upper="1.570796" lower="-1.570796" effort="100" velocity="2"/>
+    </joint>
+
+    <joint name="joint_4" type="revolute">
+        <origin xyz="0 0 0.12762" rpy="0 0 0"/>
+        <parent link="link_3"/>
+        <child link="link_4"/>
+        <axis xyz="0 0 1"/>
+        <limit upper="1.570796" lower="-1.570796" effort="100" velocity="2"/>
+    </joint>
+
+    <joint name="joint_5" type="revolute">
+        <origin xyz="0 0 0.095" rpy="0 0 0"/>
+        <parent link="link_4"/>
+        <child link="link_5"/>
+        <axis xyz="1 0 0"/>
+        <limit upper="1.570796" lower="-1.570796" effort="100" velocity="2"/>
+    </joint>
+
+    <!-- -->
+    <xacro:if value="$(arg hand)">
+        <xacro:include filename="$(find hand_description)/urdf/hand.urdf" />
+        <!-- -->
+        <joint name="joint_6" type="fixed">
+            <origin xyz="0 0 0.041" rpy="0 0 0"/>
+            <parent link="link_5"/>
+            <child link="base_hand"/>
+            <axis xyz="1 0 0"/>
+        </joint>
+    </xacro:if>
+    
+</robot>

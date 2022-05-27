@@ -1,0 +1,16 @@
+<launch>
+	<arg name="paused" default="true"/>
+	<arg name="headless" default="false"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="hand" default="false" />
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="paused" value="$(arg paused)"/>
+		<arg name="headless" value="$(arg headless)"/>
+		<arg name="use_sim_time" value="$(arg use_sim_time)"/>
+	</include>
+
+	<param name="robot_description" command="$(find xacro)/xacro '$(find moveo_description)/urdf/moveo.urdf' hand:=$(arg hand)" />
+
+	<node name="moveo_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model moveo" respawn="false" output="screen" />
+</launch>
